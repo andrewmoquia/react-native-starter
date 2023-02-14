@@ -5,6 +5,12 @@ const ComponentsScreen = () => {
     return <Text style={styles.textStyle}>This is the component screen!</Text>;
 };
 
+// Inline CSS
+// <Text style={{ fontSize: 30 }}>This is the component screen!</Text>;
+
+//Using Style Sheet
+// <Text style={styles.textStyle}>This is the component screen!</Text>;
+
 const styles = StyleSheet.create({
     textStyle: {
         fontSize: 30,
