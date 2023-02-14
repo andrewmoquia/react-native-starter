@@ -1,8 +1,21 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
+
+// View = Wrap elements into one.
 
 const ComponentsScreen = () => {
-    return <Text style={styles.textStyle}>This is the component screen!</Text>;
+    const greetings = 'Hello World!';
+    const num = 59;
+    const varElement = <Text style={subHeader.textStyle}>Hi! I am an element created in variable!</Text>;
+
+    return (
+        <View>
+            <Text style={mainHeader.textStyle}>This is the component screen in inside View Element!</Text>
+            <Text style={subHeader.textStyle}>{greetings}</Text>
+            <Text style={subHeader.textStyle}>{num}</Text>
+            {varElement}
+        </View>
+    );
 };
 
 // Inline CSS
@@ -11,7 +24,13 @@ const ComponentsScreen = () => {
 //Using Style Sheet
 // <Text style={styles.textStyle}>This is the component screen!</Text>;
 
-const styles = StyleSheet.create({
+const mainHeader = StyleSheet.create({
+    textStyle: {
+        fontSize: 40,
+    }
+});
+
+const subHeader = StyleSheet.create({
     textStyle: {
         fontSize: 30,
     }
