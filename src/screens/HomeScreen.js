@@ -2,15 +2,17 @@ import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
+    
+    const { navigate } = navigation;
 
     const handleButtonPress = () => {
         console.log('Button pressed!');
-        navigation.navigate('Components');
+        navigate('Components');
     }; 
 
     const handleListPress = () => {
         console.log("List pressed!");
-        navigation.navigate('FirstExercise');
+        navigate('FirstExercise');
     };
 
     return (
