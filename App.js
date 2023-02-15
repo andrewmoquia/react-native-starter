@@ -4,6 +4,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ComponentsScreen from "./src/screens/ComponentsScreen";
 import FirstExercise from "./src/screens/FirstExercise";
 import ListScreen from "./src/screens/ListScreen";
+import ListExercise from "./src/screens/ListExercise";
 
 const navigator = createStackNavigator(
   {
@@ -11,9 +12,10 @@ const navigator = createStackNavigator(
     Components: ComponentsScreen,
     FirstExercise,
     ListScreen,
+    ListExercise,
   },
   {
-    initialRouteName: "ListScreen",
+    initialRouteName: "ListExercise",
     defaultNavigationOptions: {
       title: "App",
     },
