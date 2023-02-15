@@ -1,15 +1,38 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen Tests</Text>;
+const HomeScreen = ({ navigation }) => {
+    
+    const { navigate } = navigation;
+
+    const handleButtonPress = () => {
+        console.log('Button pressed!');
+        navigate('Components');
+    }; 
+
+    const handleListPress = () => {
+        console.log("List pressed!");
+        navigate('FirstExercise');
+    };
+
+    return (
+        <View>
+            <Text style={ styles.text }>Home!</Text>
+            <Button 
+                title="Components"
+                onPress={ handleButtonPress }
+            />
+            <TouchableOpacity onPress={ handleListPress }>
+                <Text>First Exercise</Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 45,
-    color: 'red',
-  },
+    text: {
+        fontSize: 45,
+    },
 });
 
 export default HomeScreen;
