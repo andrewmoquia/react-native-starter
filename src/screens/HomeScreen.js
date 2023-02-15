@@ -1,15 +1,22 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen Tests</Text>;
+    return (
+        <View>
+            <Text style={ styles.text }>Home!</Text>
+            <Button 
+                title="Components"
+                onPress={ () => { console.log('Button pressed!') }}
+            />
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 45,
-    color: 'red',
-  },
+    text: {
+        fontSize: 45,
+    },
 });
 
 export default HomeScreen;
