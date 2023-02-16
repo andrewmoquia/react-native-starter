@@ -1,30 +1,51 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
+// import { FlatList } from "react-native-gesture-handler";
 
 const HomeScreen = ({ navigation }) => {
     
     const { navigate } = navigation;
 
-    const handleButtonPress = () => {
-        console.log('Button pressed!');
-        navigate('Components');
-    }; 
+    const pages = [
+        { page: 'Components' },
+        { page: 'FirstExercise' },
+        { page: 'ImageScreen' },
+    ];
 
-    const handleListPress = () => {
-        console.log("List pressed!");
-        navigate('FirstExercise');
+    const handlePageSwitch = (page) => {
+        console.log(`${page} pressed!`);
+        navigate(page);
     };
 
     return (
         <View>
             <Text style={ styles.text }>Home!</Text>
-            <Button 
+            <FlatList
+                vertical={ true }
+                showsVerticalScrollIndicator={ true }
+                keyExtractor={ (item) => item.page }
+                data={ pages }
+                renderItem={ ({ item }) => {
+                    return (
+                        <TouchableOpacity onPress={ () => handlePageSwitch(item.page) }>
+                             <Text>{ item.page }</Text>
+                        </TouchableOpacity>
+                    );
+                }}
+            />
+            {/* <Button 
                 title="Components"
                 onPress={ handleButtonPress }
-            />
-            <TouchableOpacity onPress={ handleListPress }>
+            /> */}
+            {/* <TouchableOpacity onPress={ () => handlePageSwitch('Components') }>
+                <Text>Components</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={ () => handlePageSwitch('FirstExercise') }>
                 <Text>First Exercise</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={ () => handlePageSwitch('ImageScreen') }>
+                <Text>Image Screen</Text>
+            </TouchableOpacity> */}
         </View>
     );
 };
