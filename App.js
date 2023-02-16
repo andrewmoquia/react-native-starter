@@ -17,7 +17,7 @@ const navigator = createStackNavigator(
     ImageScreen,
   },
   {
-    initialRouteName: "ImageScreen",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "App",
     },

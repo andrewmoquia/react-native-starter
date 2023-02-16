@@ -14,6 +14,11 @@ const HomeScreen = ({ navigation }) => {
         console.log("List pressed!");
         navigate('FirstExercise');
     };
+    
+    const handleImagePress = () => {
+        console.log("Image Screen pressed!");
+        navigate('ImageScreen');
+    };
 
     return (
         <View>
@@ -24,6 +29,9 @@ const HomeScreen = ({ navigation }) => {
             />
             <TouchableOpacity onPress={ handleListPress }>
                 <Text>First Exercise</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={ handleImagePress }>
+                <Text>Image Screen</Text>
             </TouchableOpacity>
         </View>
     );
