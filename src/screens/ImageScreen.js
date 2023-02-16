@@ -3,11 +3,16 @@ import { View, Text, StyleSheet } from 'react-native';
 import ImageDetail from '../components/ImageDetail';
 
 const ImageScreen = () => {
+    const images = [
+        { title: 'Forest', imageSrc: require('../../assets/forest.jpg') },
+        { title: 'Beach', imageSrc: require('../../assets/beach.jpg') },
+        { title: 'Mountain', imageSrc: require('../../assets/mountain.jpg') },
+    ];
     return (
         <View>
-            <ImageDetail title="Forest" imageSource={require('../../assets/forest.jpg')} />
-            <ImageDetail title="Beach" imageSource={require('../../assets/beach.jpg')} />
-            <ImageDetail title="Mountain" imageSource={require('../../assets/mountain.jpg')} />
+            <ImageDetail props={images[0]} />
+            <ImageDetail props={images[1]} />
+            <ImageDetail props={images[2]} />
         </View>
     );
 };
