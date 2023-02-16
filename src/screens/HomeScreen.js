@@ -16,7 +16,6 @@ const HomeScreen = ({ navigation }) => {
         console.log(`${page} pressed!`);
         navigate(page);
     };
-    
 
     return (
         <View>
