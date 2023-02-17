@@ -12,6 +12,7 @@ const HomeScreen = ({ navigation }) => {
         { page: 'ImageScreen' },
         { page: 'CounterScreen' },
         { page: 'ColorScreen' },
+        { page: 'SquareScreen' },
     ];
 
     const handlePageSwitch = (page) => {

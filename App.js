@@ -8,6 +8,7 @@ import ListExercise from "./src/screens/ListExercise";
 import ImageScreen from "./src/screens/ImageScreen";
 import CounterScreen from "./src/screens/CounterScreen";
 import ColorScreen from "./src/screens/ColorScreen";
+import SquareScreen from "./src/screens/SquareScreen";
 
 const navigator = createStackNavigator(
   {
@@ -19,6 +20,7 @@ const navigator = createStackNavigator(
     ImageScreen,
     CounterScreen,
     ColorScreen,
+    SquareScreen,
   },
   {
     initialRouteName: "Home",
