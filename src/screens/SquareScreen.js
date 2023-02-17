@@ -1,6 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import ColorCounter from "../components/ColorCounter";
+
+const reducer = (state, action) => {
+    switch (action) {
+        case 'increment':
+            return { ...state, [action.color]: action.value };
+        case 'decrement':
+            return { ...state, [action.color]: action.value };
+        default:
+            return state;
+    }
+};
 
 const SquareScreen = () => {
 
@@ -29,9 +40,13 @@ const SquareScreen = () => {
         }
     };
 
+    const [state, dispatch] = useReducer(reducer, defaultColorsValue);
+
     return (
         <View>
             <Text style={styles.textStyle}>Square Color Adjuster!</Text>
+
+            <Text style={styles.textStyle}>Using Use State Hook!</Text>
 
             <ColorCounter color='Red' onChange={handleChangeColorsValue} />
             <ColorCounter color='Green' onChange={handleChangeColorsValue} />
@@ -42,6 +57,8 @@ const SquareScreen = () => {
             <Text>Value: Red {colors.red}</Text>
             <Text>Value: Green {colors.green}</Text>
             <Text>Value: Blue {colors.blue}</Text>
+
+            <Text style={styles.textStyle}>Using Reducer Hook!</Text>
         </View>
     );
 }
