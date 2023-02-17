@@ -3,13 +3,14 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native
 // import { FlatList } from "react-native-gesture-handler";
 
 const HomeScreen = ({ navigation }) => {
-    
+
     const { navigate } = navigation;
 
     const pages = [
         { page: 'Components' },
         { page: 'FirstExercise' },
         { page: 'ImageScreen' },
+        { page: 'CounterScreen' },
     ];
 
     const handlePageSwitch = (page) => {
@@ -19,16 +20,16 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View>
-            <Text style={ styles.text }>Home!</Text>
+            <Text style={styles.text}>Home!</Text>
             <FlatList
-                vertical={ true }
-                showsVerticalScrollIndicator={ true }
-                keyExtractor={ (item) => item.page }
-                data={ pages }
-                renderItem={ ({ item }) => {
+                vertical={true}
+                showsVerticalScrollIndicator={true}
+                keyExtractor={(item) => item.page}
+                data={pages}
+                renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity onPress={ () => handlePageSwitch(item.page) }>
-                             <Text>{ item.page }</Text>
+                        <TouchableOpacity onPress={() => handlePageSwitch(item.page)}>
+                            <Text>{item.page}</Text>
                         </TouchableOpacity>
                     );
                 }}
