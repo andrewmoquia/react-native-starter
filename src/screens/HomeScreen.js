@@ -11,6 +11,7 @@ const HomeScreen = ({ navigation }) => {
         { page: 'FirstExercise' },
         { page: 'ImageScreen' },
         { page: 'CounterScreen' },
+        { page: 'ColorScreen' },
     ];
 
     const handlePageSwitch = (page) => {
