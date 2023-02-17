@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, FlatList } from "react-native";
 
 const ColorScreen = () => {
-
-    const defaultColorsVal = [];
-
-    const [colors, setColors] = useState(defaultColorsVal);
 
     const randomRGB = () => {
         const red = Math.floor(Math.random() * 256);
@@ -13,6 +9,10 @@ const ColorScreen = () => {
         const blue = Math.floor(Math.random() * 256);
         return `rgba(${red}, ${green}, ${blue}, 1)`
     };
+
+    const defaultColorsVal = [randomRGB()];
+
+    const [colors, setColors] = useState(defaultColorsVal);
 
     const handleAddColorAction = () => setColors([...colors, randomRGB()]);
 
@@ -24,7 +24,15 @@ const ColorScreen = () => {
                 <Text>Add a color!</Text>
             </TouchableOpacity>
 
-            <View style={{ height: 100, width: 100, backgroundColor: randomRGB() }} />
+            <FlatList
+                vertical={true}
+                showsVerticalScrollIndicator={true}
+                keyExtractor={(item, index) => item + index}
+                data={colors}
+                renderItem={({ item }) => {
+                    return <View style={{ height: 100, width: 100, backgroundColor: item }} />
+                }}
+            />
         </View>
     );
 };
