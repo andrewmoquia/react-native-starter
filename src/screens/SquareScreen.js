@@ -3,11 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
 const reducer = (state, action) => {
-    switch (action.type) {
-        case 'increment':
-            return { ...state, [action.color]: action.value };
-        case 'decrement':
-            return { ...state, [action.color]: action.value };
+    const { type, payload } = action;
+    switch (type) {
+        case 'CHANGE_COLOR':
+            return { ...state, [payload.color]: payload.value };
         default:
             return state;
     }
@@ -51,10 +50,10 @@ const SquareScreen = () => {
 
         switch (action) {
             case 'increment':
-                newIncValue <= 255 && dispatch({ type: action, value: newIncValue, color });
+                newIncValue <= 255 && dispatch({ type: 'CHANGE_COLOR', payload: { value: newIncValue, color } });
                 break;
             case 'decrement':
-                newDecValue >= 0 && dispatch({ type: action, value: newDecValue, color });
+                newDecValue >= 0 && dispatch({ type: 'CHANGE_COLOR', payload: { value: newIncValue, color } });
                 break;
             default:
                 break;
