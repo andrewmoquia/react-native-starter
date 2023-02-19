@@ -17,10 +17,7 @@ const HomeScreen = ({ navigation }) => {
         { page: 'TextScreen' },
     ];
 
-    const handlePageSwitch = (page) => {
-        console.log(`${page} pressed!`);
-        navigate(page);
-    };
+    const handlePageSwitch = (page) => navigate(page);
 
     return (
         <View>
