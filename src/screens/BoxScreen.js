@@ -11,11 +11,9 @@ const BoxScreen = () => {
 
             <Text style={styles.textStyle}>Flexbox!</Text>
             <View style={styles.flexboxViewStyle}>
-                <Text style={styles.flexboxViewTextStyle}>Child #1</Text>
+                <Text style={{ ...styles.flexboxViewTextStyle, ...styles.flexChildOne }}>Child #1</Text>
                 <Text style={styles.flexboxViewTextStyle}>Child #2</Text>
                 <Text style={styles.flexboxViewTextStyle}>Child #3</Text>
-                <Text style={styles.flexboxViewTextStyle}>Child #4</Text>
-                <Text style={styles.flexboxViewTextStyle}>Child #5</Text>
             </View>
         </View>
     );
@@ -56,6 +54,9 @@ const styles = StyleSheet.create({
         margin: 2,
         padding: 2,
         paddingLeft: 5,
+    },
+    flexChildOne: {
+        flex: 1,
     },
 });
 
