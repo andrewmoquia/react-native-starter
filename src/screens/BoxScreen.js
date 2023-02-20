@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         margin: 10,
         padding: 10,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
     },
     flexboxViewTextStyle: {
         fontSize: 20,
