@@ -15,6 +15,7 @@ const HomeScreen = ({ navigation }) => {
         { page: 'SquareScreen' },
         { page: 'CounterScreenWithReducer' },
         { page: 'TextScreen' },
+        { page: 'BoxScreen' },
     ];
 
     const handlePageSwitch = (page) => navigate(page);
