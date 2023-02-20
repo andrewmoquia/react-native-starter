@@ -65,6 +65,8 @@ const styles = StyleSheet.create({
     },
     flexChildThree: {
         flex: 0, // 40%
+        left: '50%',
+        position: 'absolute',
     },
 });
 
