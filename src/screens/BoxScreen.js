@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         margin: 10,
         padding: 10,
-        alignItems: 'flex-start',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
+        alignItems: 'stretch',
+        flexDirection: 'column',
+        // flexWrap: 'wrap',
+        // justifyContent: 'space-evenly',
     },
     flexboxViewTextStyle: {
         fontSize: 20,
@@ -56,13 +56,15 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
     },
     flexChildOne: {
-        flex: 3, // 30%
+        flex: 0, // 30%
+        alignSelf: 'flex-start',
     },
     flexChildTwo: {
-        flex: 3, // 30%
+        flex: 0, // 30%
+        alignSelf: 'flex-end',
     },
     flexChildThree: {
-        flex: 4, // 40%
+        flex: 0, // 40%
     },
 });
 
