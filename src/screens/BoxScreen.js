@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     flexChildTwo: {
         flex: 0, // 30%
         alignSelf: 'flex-end',
+        // ...StyleSheet.absoluteFill,
     },
     flexChildThree: {
         flex: 0, // 40%
