@@ -12,8 +12,8 @@ const BoxScreen = () => {
             <Text style={styles.textStyle}>Flexbox!</Text>
             <View style={styles.flexboxViewStyle}>
                 <Text style={{ ...styles.flexboxViewTextStyle, ...styles.flexChildOne }}>Child #1</Text>
-                <Text style={styles.flexboxViewTextStyle}>Child #2</Text>
-                <Text style={styles.flexboxViewTextStyle}>Child #3</Text>
+                <Text style={{ ...styles.flexboxViewTextStyle, ...styles.flexChildTwo }}>Child #2</Text>
+                <Text style={{ ...styles.flexboxViewTextStyle, ...styles.flexChildThree }}>Child #3</Text>
             </View>
         </View>
     );
@@ -56,7 +56,13 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
     },
     flexChildOne: {
-        flex: 1,
+        flex: 3, // 30%
+    },
+    flexChildTwo: {
+        flex: 3, // 30%
+    },
+    flexChildThree: {
+        flex: 4, // 40%
     },
 });
 
